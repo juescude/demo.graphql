@@ -20,6 +20,11 @@ public class UserServiceImpl implements IUserService{
     }
 
     @Override
+    public List<User> createUsers(List<User> users) {
+        return userRepository.saveAll(users);
+    }
+
+    @Override
     public void deleteUser(String id) {
         userRepository.deleteById(id);
 

@@ -30,7 +30,7 @@ public class GraphqlController {
                 new AnnotatedResolverBuilder(),
                 // Resolve public methods inside root package
                 new PublicResolverBuilder("com.example.demo.graphql.spqr.*"))
-                .withOperationsFromSingleton(userResolver, UserResolver.class)
+                .withOperationsFromSingletons(userResolver)
                 .withValueMapperFactory(new JacksonValueMapperFactory()).generate();
         graphQL = GraphQL.newGraphQL(schema).build();
     }

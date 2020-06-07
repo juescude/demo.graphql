@@ -20,6 +20,11 @@ public class UserResolver {
         return userService.createUser(user);
     }
 
+    @GraphQLMutation(name = "createUsers")
+    public List<User> createUsers(@GraphQLArgument(name = "details") List<User> users) {
+        return userService.createUsers(users);
+    }
+
     @GraphQLQuery(name = "getAllUser")
     public List<User> getAllUser() {
         return userService.getAllUsers();
